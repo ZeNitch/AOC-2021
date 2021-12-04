@@ -1,4 +1,3 @@
-import java.lang.reflect.TypeVariable
 
 fun main() {
     fun part1(input: List<String>): Int {
