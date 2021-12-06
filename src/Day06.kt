@@ -21,9 +21,8 @@ fun main() {
     }
 
     fun part2(testInput: MutableList<Int>, numberOfDays: Int): Long {
-        //needs long or it will overflow...
-        var total = testInput.groupingBy { it }.eachCount().mapValues { it.value.toLong() }.toMutableMap()
-        var newMap = mutableMapOf<Int, Long>()
+        var total = testInput.groupingBy { it }.eachCount().mapValues { it.value }.toMutableMap()
+        var newMap = mutableMapOf<Int, Int>()
         repeat(numberOfDays) {
             for ((key, value) in total) {
                 if (key == 0) {
@@ -36,7 +35,7 @@ fun main() {
             total = newMap
             newMap = mutableMapOf()
         }
-        return total.values.sum()
+        return total.values.fold(0L){a,b -> a+b}
     }
 
     // test if implementation meets criteria from the description, like:
