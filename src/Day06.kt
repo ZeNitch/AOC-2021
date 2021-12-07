@@ -10,6 +10,7 @@ fun main() {
             return null
         }
     }
+
     //Don't try the second solution with this...
     //Leaving this also for the sake of having it
     fun part1(testInput: MutableList<Int>, numberOfDays: Int): Int {
@@ -35,7 +36,7 @@ fun main() {
             total = newMap
             newMap = mutableMapOf()
         }
-        return total.values.fold(0L){a,b -> a+b}
+        return total.values.fold(0L) { a, b -> a + b }
     }
 
     // test if implementation meets criteria from the description, like:
